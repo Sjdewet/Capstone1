@@ -39,7 +39,7 @@ class Users{
         }
         // Query
         const query = `
-        INSERT INTO Users
+        INSERT INTO User
         SET ?
         `
         db.query(query, [data],(err)=>{
