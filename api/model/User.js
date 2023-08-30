@@ -5,7 +5,8 @@ class Users{
     fetchUsers(req, res){
         const query = `
         SELECT userID, firstName ,lastName , userAge, userRole, emailAdd, userPass, userProfile
-        FROM Users;
+        FROM Users
+        WHERE userID = ${req.params.id};
         `
         db.query(query,(err,results)=>{
             if(err) throw err
@@ -39,7 +40,7 @@ class Users{
         }
         // Query
         const query = `
-        INSERT INTO User
+        INSERT INTO Users
         SET ?
         `
         db.query(query, [data],(err)=>{

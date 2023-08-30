@@ -7,7 +7,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 // const errorHandling = require('./middleware/ErrorHandling.js')
-const port = +process.env.PORT || 3131;
+const port = +process.env.PORT || 3000;
 // static
 app.use(express.static("./static")),
   app.use(
