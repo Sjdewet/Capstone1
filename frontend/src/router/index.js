@@ -4,10 +4,9 @@ import AboutView from '../views/AboutView.vue'
 import AdminView from '../views/AdminView.vue'
 import ProductsView from '../views/ProductsView.vue'
 import ContactView from '../views/ContactView.vue'
-import CheckoutView from '../views/CheckoutView.vue'
-import ViewProfileView from '../views/ViewProfileView.vue'
+import CheckoutView from '@/views/CheckoutView.vue'
 import LoginView from '../views/LoginView.vue'
-
+import ProfileView from '../views/ProfileView.vue'
 const routes = [
   {
     path: '/',
@@ -41,19 +40,17 @@ const routes = [
     component: CheckoutView
   },
 
-
-  {
-    path: '/ViewProfile',
-    name: 'ViewProfile',
-    component: ViewProfileView
-  },
-
   {
     path: '/login',
     name: 'login',
     component: LoginView
-  }
+  },
 
+  {
+    path: '/profile',
+    name: 'profile',
+    component: ProfileView
+  }
 
 
 ]
@@ -64,4 +61,3 @@ const router = createRouter({
 })
 
 export default router
-
