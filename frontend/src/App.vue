@@ -8,10 +8,11 @@
 
 <style>
 
+
 </style>
 
 <script>
-import Navbar from '../src/components/Navbar.vue'
+import Navbar from '../src/components/NavBar.vue'
 import Footer from './components/Footer.vue'
   export default{
     components:{

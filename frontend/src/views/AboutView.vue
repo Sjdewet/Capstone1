@@ -1,5 +1,12 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1 class="heading">LEARN MORE ABOUT US...</h1>
   </div>
 </template>
+
+<style>
+.heading{
+  text-align: center;
+  color: #C6A443;
+}
+</style>
