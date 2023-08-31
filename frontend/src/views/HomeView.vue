@@ -124,7 +124,7 @@
 }
 
 .home{
-  height: 400vh;
+  height: 220vh;
 }
 
 .card {
