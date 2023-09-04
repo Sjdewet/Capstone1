@@ -10,7 +10,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ item.prodName }}</h5>
                   <p>{{ item.Category }}</p>
-                  <router-link
+                  <!-- <router-link
                     :to="{
                       name: 'single',
                       params: { id: item.prodID },
@@ -25,7 +25,7 @@
                     <button class="btn">
                       View Product
                     </button>
-                  </router-link>
+                  </router-link> -->
                 </div>
               </div>
             </div>

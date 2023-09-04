@@ -1,18 +1,113 @@
 <template>
-    <div>
-<h1 class="H1"> ADMIN INTERFACE💻</h1>
-    </div>
-</template>
-
-<script>
-    export default {
-        
-    }
-</script>
-
-<style scoped>
-.H1{
-    color: #C6A443;
-    text-align: center;
-}
-</style>
+    <div class="about">
+      <Navbar/>
+      <br>
+  <h2>Admin</h2>
+  <button class="addbtn"><AddProduct/> </button>
+      <div class="table-responsive" style="margin-top: 1rem">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Category</th>
+              <th scope="col">Image</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody v-for="product in products" :key="product.prodID">
+            <tr>
+              <th scope="row">{{ product.prodID }}</th>
+              <td>{{ product.prodName }}</td>
+              <td>{{ product.quantity }}</td>
+              <td>{{ product.amount }}</td>
+              <td>{{ product.Category }}</td>
+              <td>
+                <img
+                  :src="product.prodUrl"
+                  :alt="product.prodName"
+                  style="width: 5rem"
+                />
+              </td>
+              <td><button>Edit</button></td>
+              <td><button class="btn" type="button" @click="deleteProduct(product.prodID)">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h2>User</h2>
+      <button class="addbtn"><AddUser/> </button>
+      <div class="table-responsive" style="margin-top: 1rem" v-if="products">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Role</th>
+                <th scope="col">Email</th>
+                <th scope="col">Profile</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody v-for="user in users" :key="user.userID">
+              <tr>
+                <th scope="row">{{ user.userID }}</th>
+                <th>{{ user.firstName }}</th>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.userAge }}</td>
+                <td>{{ user.Gender }}</td>
+                <td>{{ user.userRole }}</td>
+                <td>{{ user.emailAdd }}</td>
+                <td>
+                  <img
+                    :src="user.userProfile"
+                    :alt="user.prodName"
+                    style="width: 5rem"
+                  />
+                </td>
+                <td><button>Edit</button></td>
+                <td><button class="btn" type="button" @click="deleteUser(user.userID)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="else" v-else>
+          <Spinner/>
+        </div>
+      </div>
+  </template>
+    <script>
+   // import AddUser from '@/components/AddUser.vue'
+  export default {
+    computed: {
+      products() {
+        return this.$store.state.products;
+      },
+      users(){
+          return this.$store.state.users;
+      }
+    },
+    mounted() {
+      this.$store.dispatch("fetchProducts");
+      this.$store.dispatch("fetchUsers");
+    },
+    components:{
+      //  HeaderComp
+     },
+     methods: {
+      deleteProduct(prodID) {
+          this.$store.dispatch('DeleteProducts', prodID)
+      },
+      deleteUser(userID) {
+          this.$store.dispatch('DeleteUsers', userID)
+      }
+     }
+  };
+  </script>

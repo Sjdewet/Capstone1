@@ -34,7 +34,7 @@ export default createStore({
   },
   actions: {
     async fetchHomedecor({ commit }) {
-      const fetchedData = await axios.get(`${url}products`)
+      const fetchedData = await axios.get(`${url}product`)
       commit('setHomedecor', fetchedData.data.results)
     },
     async fetchUsers({ commit }) {
