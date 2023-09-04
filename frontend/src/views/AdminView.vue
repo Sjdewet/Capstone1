@@ -2,8 +2,8 @@
     <div class="about">
       <Navbar/>
       <br>
-  <h2>Admin</h2>
-  <button class="addbtn"><AddProduct/> </button>
+  <h2>Admin Interface</h2>
+  <button class="addbtn bg-dark"><AddProduct/></button>
       <div class="table-responsive" style="margin-top: 1rem">
         <table class="table">
           <thead>
@@ -32,7 +32,7 @@
                   style="width: 5rem"
                 />
               </td>
-              <td><button>Edit</button></td>
+              <td><button class="button">Edit</button></td>
               <td><button class="btn" type="button" @click="deleteProduct(product.prodID)">Delete</button></td>
             </tr>
           </tbody>
@@ -41,10 +41,10 @@
       <h2>User</h2>
       <button class="addbtn"><AddUser/> </button>
       <div class="table-responsive" style="margin-top: 1rem" v-if="products">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
+          <table class="table" style="background-color:black">
+            <thead style="background-color:black">
+              <tr style="background-color:black">
+                <th scope="col" style="color:rgb(0, 0, 0)">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Surname</th>
                 <th scope="col">Age</th>
@@ -72,7 +72,7 @@
                     style="width: 5rem"
                   />
                 </td>
-                <td><button>Edit</button></td>
+                <td><button class="button">Edit</button></td>
                 <td><button class="btn" type="button" @click="deleteUser(user.userID)">Delete</button></td>
               </tr>
             </tbody>
@@ -111,3 +111,27 @@
      }
   };
   </script>
+
+  <style scoped>
+  .about{
+    color: #C6A443;
+    text-align: center;
+  }
+
+  .table{
+    background-color: black;
+    color: antiquewhite;
+  }
+
+.button{
+    color: #C6A443;
+    background-color: black;
+    width: 3rem;
+}
+
+.btn{
+    color: #C6A443;
+    background-color: black;
+    width: 4.5rem;
+}
+</style>

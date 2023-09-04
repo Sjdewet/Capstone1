@@ -3,29 +3,19 @@
       <div class="products">
         <h1 class="hclass">Check out our Products:</h1>
         <div>
-          <div class="row row-cols-1 row-cols-md-3 g-4" v-if="homedecor">
-            <div class="col" v-for="item in homedecor" :key="item.prodID">
+          <div class="row row-cols-1 row-cols-md-3 g-4" v-if="products">
+            <div class="col" v-for="product in products" :key="product.prodID">
               <div class="card h-100">
-                <img :src="item.prodUrl" class="card-img-top" alt="pic">
+                <img :src="product.prodUrl" class="card-img-top" alt="pic">
                 <div class="card-body">
-                  <h5 class="card-title">{{ item.prodName }}</h5>
-                  <p>{{ item.Category }}</p>
-                  <!-- <router-link
-                    :to="{
-                      name: 'single',
-                      params: { id: item.prodID },
-                      query: {
-                        name: item.prodName,
-                        category: item.Category,
-                        img: item.prodUrl,
-                        amount: item.amount,
-                      },
-                    }"
-                  >
-                    <button class="btn">
-                      View Product
-                    </button>
-                  </router-link> -->
+                  <h5 class="card-title">{{ product.prodName }}</h5>
+                  <p>{{ product.Category }}</p>
+                  <router-link
+                  :to="{name: 'product', params:{prodID: product.prodID}}"
+                  ><button class="btn btn-outline-light" style="background-color:black">
+                    View More
+                  </button></router-link
+                >
                 </div>
               </div>
             </div>
@@ -59,9 +49,10 @@
   .hclass {
     text-align: center;
     margin-top: 1rem;
+    color: #C6A443;
   }
   .btn {
     background-color: #000000;
-    color: white;
+    color: #C6A443;
   }
   </style>
