@@ -40,18 +40,19 @@
   <script>
 //   import Spinner from '@/components/SpinnerComponent.vue'
   export default {
-    components:{
-    //   Spinner
-    },
-    computed: {
-      homedecor() {
-        return this.$store.state.homedecor;
-      },
-    },
-    mounted() {
-      this.$store.dispatch('fetchHomedecor');
-    },
-  };
+    components: {
+     },
+        computed: {
+            products(){
+                return this.$store.state.products
+            },
+        },
+        mounted() {
+            this.$store.dispatch('fetchProducts')
+            // this.$store.dispatch('fetchProduct', this.prodID)
+        }
+    };
+
   </script>
   <style scoped>
   

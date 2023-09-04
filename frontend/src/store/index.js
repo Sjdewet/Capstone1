@@ -5,61 +5,111 @@ const url = 'https://summercapstone.onrender.com/'
 
 export default createStore({
   state: {
-    homedecor: null,
     users: null,
-    addProduct: null,
-    addUser: null
+    user: null,
+    products: null,
+    product: null,
+    spinner: false,
+    token: null,
+    msg: null,
+    addProduct:null,
+    addUser:null
   },
   getters: {
   },
   mutations: {
-    setHomedecor(state, data) {
-      state.homedecor = data
-    },
     setUsers(state, users) {
       state.users = users
     },
-    setDeleteProd(state, data) {
-      state.homedecor = data
+    setUser(state, user) {
+      state.user = user
     },
-    setDeleteUser(state, data) {
+    setProducts(state, products) {
+      state.products = products
+    },
+    setProduct(state, product) {
+      state.product = product
+    },
+    setSpinner(state, spinner) {
+      state.spinner = spinner
+    },
+    setToken(state, token) {
+      state.token = token
+    },
+    setMsg(state, msg) {
+      state.msg = msg
+    },
+    setDeleteProducts(state, data) {
+      state.products = data
+    },
+    setDeleteUsers(state, data) {
       state.users = data
     },
-    setAddProduct(state, data) {
+    setAddProduct(state,data){
       state.addProduct = data
     },
-    setAddUser(state, data) {
+    setAddUser(state,data){
       state.addUser = data
-    },
-  },
+    }},
   actions: {
-    async fetchHomedecor({ commit }) {
-      const fetchedData = await axios.get(`${url}product`)
-      commit('setHomedecor', fetchedData.data.results)
+    async fetchUsers(context) {
+      try{
+        const {data} = await axios.get(`${url}users`)
+        context.commit("setUsers", data.results)
+      }catch(e){
+        context.commit("setMsg", "An error occurred")
+      }
     },
-    async fetchUsers({ commit }) {
-      const fetchedData = await axios.get(`${url}users`)
-      commit('setUsers', fetchedData.data.results)
+    async fetchProducts(context) {
+      try{
+        const {data} = await axios.get(`${url}products`)
+        context.commit("setProducts", data.results)
+        console.log(data.results);
+      }catch(e){
+        context.commit("setMsg", "An error occurred")
+      }
     },
-    async deleteProduct({ commit }, prodID) { 
-      const response = await axios.delete(`${url}product/${prodID}`)
+    async fetchProduct(context, prodID) {
+      try{
+        const {data} = await axios.get(`${url}product/${prodID}`)
+        context.commit("setProduct", data.results[0])
+        console.log(data.results);
+      }catch(e){
+        context.commit("setMsg", "An error occurred")
+      }
+    },
+    async DeleteProducts(context, prodID ) {
+      try{
+        const response = await axios.delete(`${url}product/${prodID}`)
+        context.commit("setDeleteProducts", response)
+        location.reload()
+      }catch(e){
+        context.commit("setMsg", "An error occurred")
+      }
+    },
+    async DeleteUsers(context, userID ) {
+      try{
+        const response = await axios.delete(`${url}users/${userID}`)
+        context.commit("setDeleteUsers", response)
+        location.reload()
+      }catch(e){
+        context.commit("setMsg", "An error occurred")
+      }
+    },
+    async addProduct({ commit }, productData) {
+      const response = await axios.post(`${url}products`, productData)
       location.reload()
-      commit('setDeleteProd', response)
+      commit('setAddProduct', response.data)
     },
-    async deleteUser({ commit }, userID) { 
-      const response = await axios.delete(`${url}user/${userID}`)
-      location.reload()
-      commit('setDeleteUser', response)
-    },
-    async addProduct(context, productdata) {
-      const response = await axios.post(`${url}product`, productdata)
-      location.reload()
-      context.commit('setAddProduct', response.data)
-    },
-    async addUser(context, userdata) {
-      const response = await axios.post(`${url}register`, userdata)
-      location.reload()
-      context.commit('setAddUser', response.data)
+    async addUser({ commit }, userData) {
+      try {
+        const response = await axios.post(`${url}users`, userData)
+        commit('setAddUser', response.data)
+        location.reload()
+        console.log('testing');
+      } catch (error) {
+        console.log(error);
+      }
     }
   },
   modules: {
