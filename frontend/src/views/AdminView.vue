@@ -5,7 +5,7 @@
   <h2>Admin Interface</h2>
   <button class="addbtn bg-dark"><AddProduct/></button>
       <div class="table-responsive" style="margin-top: 1rem">
-        <table class="table">
+        <table class="table-black w-100">
           <thead>
             <tr>
               <th scope="col">ID</th>
