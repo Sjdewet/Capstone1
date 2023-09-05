@@ -41,7 +41,7 @@
       <h2>User</h2>
       <button class="addbtn"><AddUser/> </button>
       <div class="table-responsive" style="margin-top: 1rem" v-if="products">
-          <table class="table" style="background-color:black">
+          <table class="table-black w-100" style="background-color:black">
             <thead style="background-color:black">
               <tr style="background-color:black">
                 <th scope="col" style="color:rgb(0, 0, 0)">ID</th>
