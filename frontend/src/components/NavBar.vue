@@ -23,6 +23,9 @@
                         <router-link class="head" to="/login">Login</router-link>
                       </li>
                       <li>
+                        <router-link class="head" to="/register">Register</router-link>
+                      </li>
+                      <li>
                         <router-link class="head" to="/admin">Admin</router-link>
                       </li>
                       <li>
@@ -64,7 +67,7 @@ export default {
 
 .head{
     color: #C6A443;
-    margin-left: 4rem;
+    margin-left: 3rem;
     text-decoration: none;
      
 }

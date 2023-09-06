@@ -7,6 +7,7 @@ import ContactView from '../views/ContactView.vue'
 import CheckoutView from '@/views/CheckoutView.vue'
 import LoginView from '../views/LoginView.vue'
 import ProfileView from '../views/ProfileView.vue'
+import RegisterView from '../views/RegisterView.vue'
 
 const routes = [
   {
@@ -51,6 +52,11 @@ const routes = [
     path: '/profile',
     name: 'profile',
     component: ProfileView
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: RegisterView
   },
 
   {

@@ -64,12 +64,11 @@ form {
 .formButton {
   height: 2rem;
   width: 3rem;
-  margin: 5px;
+  margin: 3px;
   border-radius: 5px;
-  background-color: #a97847;
+  background-color: #C6A443;
   color: black;
 }
-
 .h1 {
   text-align: center;
 }

@@ -110,7 +110,32 @@ export default createStore({
       } catch (error) {
         console.log(error);
       }
-    }
+    },
+    //register
+    async addUser(context, payload) {
+      try {
+        const { msg } = (await axios.post(`${url}register`, payload)).data;
+        if (msg) {
+          sweet({
+            title: "Registration",
+            text: msg,
+            icon: "success",
+            timer: 4000,
+          });
+          context.dispatch("fetchUsers");
+          router.push({ name: "login" });
+        } else {
+          sweet({
+            title: "Error",
+            text: msg,
+            icon: "error",
+            timer: 4000
+          });
+        }
+      } catch (e) {
+        context.commit("setMsg", "An error has occured");
+      }
+    },
   },
   modules: {
   }
