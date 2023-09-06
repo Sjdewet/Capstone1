@@ -1,5 +1,11 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+import sweet from 'sweetalert'
+import router from '@/router'
+import {useCookies} from 'vue3-cookies'
+const {cookies}= useCookies()
+import authenticateUser from '@/services/authenticateUser'
+
 
 const url = 'https://summercapstone.onrender.com/'
 
@@ -112,9 +118,9 @@ export default createStore({
       }
     },
     //register
-    async addUser(context, payload) {
+    async register(context, payload) {
       try {
-        const { msg } = (await axios.post(`${url}register`, payload)).data;
+        const { msg } = (await axios.post(`${url}users`, payload)).data;
         if (msg) {
           sweet({
             title: "Registration",
@@ -130,6 +136,35 @@ export default createStore({
             text: msg,
             icon: "error",
             timer: 4000
+          });
+        }
+      } catch (e) {
+        context.commit("setMsg", "An error has occured");
+      }
+    },
+    //login
+    async login(context, payload) {
+      try {
+        const { msg, token, results } = (
+          await axios.post(`${url}login`, payload)
+        ).data;
+        if (results) {
+          context.commit("setUser", { results, msg });
+          cookies.set("MannUser", { msg, token, results });
+          authenticateUser.applyToken(token);
+          sweet({
+            title: msg,
+            text: `Welcome back ${results?.firstName} ${results?.lastName}`,
+            icon: "success",
+            timer: 4000,
+          });
+          router.push({ name: "home" });
+        } else {
+          sweet({
+            title: "Error",
+            text: msg,
+            icon: "error",
+            timer: 4000,
           });
         }
       } catch (e) {

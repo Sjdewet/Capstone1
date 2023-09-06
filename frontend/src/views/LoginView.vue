@@ -3,13 +3,13 @@
     <h3 class="h3">ACCOUNT LOGIN</h3>
     <div style="display: flex; justify-content:center">
       <div class="row">
-       <form action="action_page.php" method="post">
+       <form action="action_page.php" method="post" @submit.prevent="login">
         <div class="container">
-        <label for="uname"><b>Username</b></label>
-       <input type="text" placeholder="Enter Username" name="uname" required>
+        <label for="uname"><b>Email Address</b></label>
+       <input type="text" placeholder="Enter Username" v-model="payload.emailAdd" name="uname" required>
          
        <label for="psw"><b>Password</b></label>
-       <input type="password" placeholder="Enter Password" name="psw" required>
+       <input type="password" placeholder="Enter Password" v-model="payload.userPass" name="psw" required>
          
        <button type="submit">Login</button> 
        </div>
@@ -21,7 +21,27 @@
 
 <script>
   export default {
-    
+    data() {
+    return {
+      payload: {
+        emailAdd: "",
+        userPass: "",
+      },
+    };
+  },
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+  },
+  methods: {
+    login() {
+      this.$store.dispatch("login", this.payload);
+    },
+  },
+  beforeCreate() {
+    this.$store.dispatch("fetchUsers");
+  }
   }
 </script>
 

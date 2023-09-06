@@ -76,7 +76,7 @@
               required
             />
           </div>
-          <button type="submit" class="btn btn-primary">Register</button>
+          <button type="submit" class="btn">Register</button>
         </form>
       </div>
 </template>
@@ -98,10 +98,19 @@ export default {
     },
     methods: {
         register() {
-            this.$store.dispatch('addUser', this.payload)
+            this.$store.dispatch('register', this.payload)
         }
     }
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.mb-3{
+  width: 40%;
+}
+
+.btn{
+ color: black;
+ background-color: #C6A443;
+}
+</style>
