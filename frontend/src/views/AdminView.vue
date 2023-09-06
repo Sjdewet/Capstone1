@@ -62,7 +62,7 @@
                 <th>{{ user.firstName }}</th>
                 <td>{{ user.lastName }}</td>
                 <td>{{ user.userAge }}</td>
-                <td>{{ user.Gender }}</td>
+                <td>{{ user.gender }}</td>
                 <td>{{ user.userRole }}</td>
                 <td>{{ user.emailAdd }}</td>
                 <td>
