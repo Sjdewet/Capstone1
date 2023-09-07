@@ -8,12 +8,19 @@ import CheckoutView from '@/views/CheckoutView.vue'
 import LoginView from '../views/LoginView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import RegisterView from '../views/RegisterView.vue'
+import {useCookies} from 'vue3-cookies'
+const {cookies}= useCookies()
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    beforeEnter: () => {
+      if (!cookies.get('MannUser')){
+        router.push({name: 'login'})
+      }
+    }
   },
   {
     path: '/about',

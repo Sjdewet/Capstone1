@@ -37,6 +37,9 @@
                       <li>
                         <router-link class="head" to="/contact">Contact Us</router-link>
                       </li>
+                      <li>
+                        <router-link class="head" to="/login" @click="logOut">Log Out</router-link>
+                      </li>
                     </ul>
                     <form class="d-flex" role="search">
                       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -49,8 +52,25 @@
 </template>
 
 <script>
+  import {useCookies} from 'vue3-cookies'
+  const {cookies}= useCookies()
 export default {
-
+  computed:{
+    user(){
+      return this.$store.state.user 
+    },
+    result(){
+      return this.user?.result
+    },
+    isAdmin(){
+      return this.result?.userRole?.toLowerCase() === 'admin'
+    }
+  },
+  methods:{
+    logOut(){
+      this.$store.dispatch('LogOut')
+    }
+  }
 }
 </script>
 
@@ -67,7 +87,7 @@ export default {
 
 .head{
     color: #C6A443;
-    margin-left: 3rem;
+    margin-left: 2rem;
     text-decoration: none;
      
 }

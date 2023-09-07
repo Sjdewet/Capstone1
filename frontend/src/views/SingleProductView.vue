@@ -12,6 +12,7 @@
        </p>
        <div class="card-footer text-body-secondary">
          <router-link to="/products" class="btn">⬅️Back</router-link>
+         <router-link to="/checkout" class="btn">Add To Cart</router-link>
          <br /><br />
          </div>
        </div>
@@ -38,5 +39,6 @@
  .btn{
    background-color: black;
    color: #C6A443;
+   
  }
  </style>

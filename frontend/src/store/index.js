@@ -171,6 +171,11 @@ export default createStore({
         context.commit("setMsg", "An error has occured");
       }
     },
+    LogOut(context){
+      context.commit('setUser')
+      cookies.remove("MannUser");
+
+    }
   },
   modules: {
   }
