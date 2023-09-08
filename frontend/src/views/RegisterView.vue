@@ -1,5 +1,8 @@
 <template>
     <div>
+      <div>
+        <h1 class="h1">Register Now:</h1>
+      </div>
         <form @submit.prevent="register">
           <div class="mb-3">
             <label for="exampleInputfirstName1" class="form-label text-white">firstName</label>
@@ -107,10 +110,18 @@ export default {
 <style scoped>
 .mb-3{
   width: 40%;
+  margin-left: 29rem;
+  margin-top: 1rem;
 }
 
 .btn{
  color: black;
  background-color: #C6A443;
+ margin-left: 29rem;
+}
+
+.h1{
+  color: #C6A443;
+  text-align: center;
 }
 </style>

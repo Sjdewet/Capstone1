@@ -3,7 +3,7 @@
       <Navbar/>
       <br>
   <h2>Admin Interface</h2>
-  <button class="addbtn bg-dark"><AddProduct/></button>
+      <AddProduct />
       <div class="table-responsive" style="margin-top: 1rem">
         <table class="table-black w-100">
           <thead>
@@ -33,7 +33,7 @@
                 />
               </td>
               <td><button class="button">Edit</button></td>
-              <td><button class="btn" type="button" @click="deleteProduct(product.prodID)">Delete</button></td>
+              <td><button class="btn" type="button" @click="deleteProd(product.prodID)">Delete</button></td>
             </tr>
           </tbody>
         </table>
@@ -84,6 +84,7 @@
       </div>
   </template>
     <script>
+    import AddProduct from '@/components/AddProduct.vue';
    // import AddUser from '@/components/AddUser.vue'
   export default {
     computed: {
@@ -99,14 +100,16 @@
       this.$store.dispatch("fetchUsers");
     },
     components:{
+      AddProduct,
       //  HeaderComp
      },
      methods: {
-      deleteProduct(prodID) {
-          this.$store.dispatch('DeleteProducts', prodID)
+      deleteProd(prodID) {
+        this.$store.dispatch("ProdDeleted", prodID)
       },
+
       deleteUser(userID) {
-          this.$store.dispatch('DeleteUsers', userID)
+          this.$store.dispatch('UserDeleted', userID)
       }
      }
   };

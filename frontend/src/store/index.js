@@ -18,8 +18,7 @@ export default createStore({
     spinner: false,
     token: null,
     msg: null,
-    addProduct:null,
-    addUser:null
+    add:null
   },
   getters: {
   },
@@ -45,17 +44,11 @@ export default createStore({
     setMsg(state, msg) {
       state.msg = msg
     },
-    setDeleteProducts(state, data) {
-      state.products = data
-    },
     setDeleteUsers(state, data) {
       state.users = data
     },
-    setAddProduct(state,data){
-      state.addProduct = data
-    },
-    setAddUser(state,data){
-      state.addUser = data
+    setAdd(state,data){
+      state.add = data
     }},
   actions: {
     async fetchUsers(context) {
@@ -84,29 +77,37 @@ export default createStore({
         context.commit("setMsg", "An error occurred")
       }
     },
-    async DeleteProducts(context, prodID ) {
+
+    async UserDeleted(context, userID) {
       try{
-        const response = await axios.delete(`${url}product/${prodID}`)
-        context.commit("setDeleteProducts", response)
+        const res = await axios.delete(`${url}user/${userID}`)
+        context.commit("setAdd", res.data)
+        console.log("worked");
         location.reload()
-      }catch(e){
-        context.commit("setMsg", "An error occurred")
+      } catch(e) {
+        console.log("did not work");
       }
     },
-    async DeleteUsers(context, userID ) {
+    async ProdDeleted(context, prodID) {
       try{
-        const response = await axios.delete(`${url}users/${userID}`)
-        context.commit("setDeleteUsers", response)
+        const res = await axios.delete(`${url}products/${prodID}`)
+        context.commit("setAdd", res.data)
+        console.log("worked");
         location.reload()
-      }catch(e){
-        context.commit("setMsg", "An error occurred")
+      } catch(e) {
+        console.log("did not work");
       }
     },
-    async addProduct({ commit }, productData) {
-      const response = await axios.post(`${url}products`, productData)
-      location.reload()
-      commit('setAddProduct', response.data)
+    async addProduct({ commit }, productdata) {
+      try {
+        const res = await axios.post(`${url}product`, productdata)
+        commit("setAdd", res.data)
+        console.log("test complete");
+      } catch(e) {
+        console.log(err);
+      }
     },
+
     async addUser({ commit }, userData) {
       try {
         const response = await axios.post(`${url}users`, userData)
@@ -117,6 +118,7 @@ export default createStore({
         console.log(error);
       }
     },
+ 
     //register
     async register(context, payload) {
       try {
