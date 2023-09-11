@@ -5,7 +5,7 @@
       </div>
         <form @submit.prevent="register">
           <div class="mb-3">
-            <label for="exampleInputfirstName1" class="form-label text-white">firstName</label>
+            <label for="exampleInputfirstName1" class="form-label text-white">First Name</label>
             <input
               type="firstName"
               class="form-control"
@@ -16,7 +16,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="exampleInputlastName1" class="form-label text-white">lastName</label>
+            <label for="exampleInputlastName1" class="form-label text-white">Last Name</label>
             <input
               type="lastName"
               class="form-control"
@@ -27,7 +27,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="exampleInputuserAge1" class="form-label text-white">userAge</label>
+            <label for="exampleInputuserAge1" class="form-label text-white" >User Age</label>
             <input
               type="userAge"
               class="form-control"
@@ -38,7 +38,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="exampleInputgender1" class="form-label text-white">gender</label>
+            <label for="exampleInputgender1" class="form-label text-white">Gender</label>
             <input
               type="gender"
               class="form-control"
@@ -49,7 +49,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label text-white">Email address</label>
+            <label for="exampleInputEmail1" class="form-label text-white">Email Address</label>
             <input
               type="email"
               class="form-control"
@@ -70,7 +70,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="exampleInputuserProfile1" class="form-label text-white">userProfile</label>
+            <label for="exampleInputuserProfile1" class="form-label text-white">User Profile</label>
             <input
               type="userProfile"
               class="form-control"

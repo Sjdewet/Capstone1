@@ -38,7 +38,7 @@
                         <router-link class="head" to="/contact">Contact Us</router-link>
                       </li>
                       <li>
-                        <router-link class="head" to="/login" @click="logOut">Log Out</router-link>
+                        <router-link class="head" to="/Login" @click="logOut">Log Out</router-link>
                       </li>
                     </ul>
                     <form class="d-flex" role="search">

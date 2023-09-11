@@ -6,7 +6,7 @@
        <form action="action_page.php" method="post" @submit.prevent="login">
         <div class="container">
         <label for="uname"><b>Email Address</b></label>
-       <input type="text" placeholder="Enter Username" v-model="payload.emailAdd" name="uname" required>
+       <input type="text" placeholder="Enter Email" v-model="payload.emailAdd" name="uname" required>
          
        <label for="psw"><b>Password</b></label>
        <input type="password" placeholder="Enter Password" v-model="payload.userPass" name="psw" required>

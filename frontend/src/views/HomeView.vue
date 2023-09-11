@@ -39,7 +39,7 @@
               <p class="text-title">Atelier Versace Encens Supreme 100ml</p>
             </div>
             <div class="card-footer">
-            <span class="text-title">R6.875</span>
+            <span class="text-title">R6875.00</span>
             <div class="card-button">
               <svg class="svg-icon" viewBox="0 0 20 20">
                 

@@ -32,7 +32,7 @@
                   style="width: 5rem"
                 />
               </td>
-              <td><button class="button">Edit</button></td>
+              <td><router-link class="edit" :to="{ name: 'editp', params: { id: product.prodID } }">Edit</router-link></td>
               <td><button class="btn" type="button" @click="deleteProd(product.prodID)">Delete</button></td>
             </tr>
           </tbody>
@@ -72,7 +72,7 @@
                     style="width: 5rem"
                   />
                 </td>
-                <td><button class="button">Edit</button></td>
+                <td></td>
                 <td><button class="btn" type="button" @click="deleteUser(user.userID)">Delete</button></td>
               </tr>
             </tbody>
@@ -120,7 +120,9 @@
     color: #C6A443;
     text-align: center;
   }
-
+.edit{
+color: #C6A443;
+}
   .table{
     background-color: black;
     color: antiquewhite;

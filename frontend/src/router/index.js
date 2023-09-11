@@ -65,6 +65,12 @@ const routes = [
     name: 'register',
     component: RegisterView
   },
+  {
+    path: '/editp/:id',
+    name: 'editp',
+    component: () => import("../views/ProductEditView.vue"),
+    props: true
+  },
 
   {
     path: '/product/:prodID',

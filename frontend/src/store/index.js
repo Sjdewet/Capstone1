@@ -77,7 +77,6 @@ export default createStore({
         context.commit("setMsg", "An error occurred")
       }
     },
-
     async UserDeleted(context, userID) {
       try{
         const res = await axios.delete(`${url}user/${userID}`)
@@ -107,7 +106,6 @@ export default createStore({
         console.log(err);
       }
     },
-
     async addUser({ commit }, userData) {
       try {
         const response = await axios.post(`${url}users`, userData)
@@ -118,7 +116,6 @@ export default createStore({
         console.log(error);
       }
     },
- 
     //register
     async register(context, payload) {
       try {
@@ -177,6 +174,15 @@ export default createStore({
       context.commit('setUser')
       cookies.remove("MannUser");
 
+    },
+    async SaveEdit(context, editP) {
+      try {
+        const res = await axios.patch(`${url}products/${editP.prodID}`, editP)
+        context.commit("setProducts", res.data)
+        console.log(res.data);
+      }catch(e) {
+        console.log("err");
+      }
     }
   },
   modules: {
