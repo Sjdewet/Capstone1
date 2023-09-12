@@ -41,10 +41,6 @@
                         <router-link class="head" to="/Login" @click="logOut">Log Out</router-link>
                       </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn" type="submit">Search</button>
-                    </form>
                   </div>
             </div>
         </nav>
@@ -87,7 +83,7 @@ export default {
 
 .head{
     color: #C6A443;
-    margin-left: 2rem;
+    margin-left: 4rem;
     text-decoration: none;
      
 }
@@ -95,4 +91,6 @@ export default {
 .navbar-brand{
     color: #C6A443;
 }
+
+
 </style>

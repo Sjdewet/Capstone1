@@ -95,7 +95,7 @@ export default {
                 gender: "",
                 emailAdd: "",
                 userPass: "",
-                userProfile: "https://i.postimg.cc/HntQPB1k/Feels-Okay-Man.webp"
+                userProfile: "https://i.postimg.cc/25jzpJjv/no-profile-picture-6-1024x1024.jpg"
             }
         }
     },

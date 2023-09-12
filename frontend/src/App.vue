@@ -18,6 +18,6 @@ import Footer from './components/Footer.vue'
     components:{
       Navbar,
       Footer
-    }
+    },
   }
 </script>

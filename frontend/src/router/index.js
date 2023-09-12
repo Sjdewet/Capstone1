@@ -70,6 +70,7 @@ const routes = [
     name: 'editp',
     component: () => import("../views/ProductEditView.vue"),
     props: true
+    
   },
 
   {

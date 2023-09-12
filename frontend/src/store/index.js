@@ -149,6 +149,7 @@ export default createStore({
         ).data;
         if (results) {
           context.commit("setUser", { results, msg });
+          localStorage.setItem("user", JSON.stringify(results))
           cookies.set("MannUser", { msg, token, results });
           authenticateUser.applyToken(token);
           sweet({

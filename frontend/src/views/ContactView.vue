@@ -34,8 +34,8 @@
         </div>
         <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         <div class="btns">
-          <button class="formButton mt-3 gap-3 butn1" type="submit">Send</button>
-          <button class="formButton mt-3 gap-3 butn2" type="reset">Clear</button>
+          <button class="formButton " type="submit">Send</button>
+          <button class="formButton" type="reset">Clear</button>
 
         </div>
       </div>
@@ -69,11 +69,16 @@ form {
   background-color: #C6A443;
   color: black;
 }
-.h1 {
-  text-align: center;
+
+.btns {
+  gap: 15rem !important;
 }
 
 
+
+.h1 {
+  text-align: center;
+}
 
 
 .heading{
