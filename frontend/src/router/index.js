@@ -8,6 +8,7 @@ import CheckoutView from '@/views/CheckoutView.vue'
 import LoginView from '../views/LoginView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import RegisterView from '../views/RegisterView.vue'
+import CartView from '../views/CartView.vue'
 import {useCookies} from 'vue3-cookies'
 const {cookies}= useCookies()
 
@@ -26,6 +27,12 @@ const routes = [
     path: '/about',
     name: 'about',
     component: AboutView
+  },
+
+  {
+    path: '/cart',
+    name: 'cart',
+    component: CartView
   },
   {
     path: '/admin',

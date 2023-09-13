@@ -18,9 +18,13 @@ export default createStore({
     spinner: false,
     token: null,
     msg: null,
-    add:null
+    add:null,
+    // cartItems: [],
   },
   getters: {
+    // cartTotal (state) {
+    //   return state.cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
+    // }
   },
   mutations: {
     setUsers(state, users) {
@@ -49,7 +53,18 @@ export default createStore({
     },
     setAdd(state,data){
       state.add = data
-    }},
+    },
+    removeFromCart(state, prodID) {
+      state.cartItems = state.cartItems.filter(item => item.id !== prodID);
+    },
+    // addToCart(state, prodID) {
+    //   const thisProd = state.products.find((prod)=> prod.prodID === prodID)
+    //   const arr = state.cartItems
+    //   console.log(arr)
+    //   arr.push(thisProd);
+    // },
+
+  },
   actions: {
     async fetchUsers(context) {
       try{
@@ -115,6 +130,14 @@ export default createStore({
       } catch (error) {
         console.log(error);
       }
+    },
+
+    // addToCart(state, product){
+    //   state.cartItems.push(product);
+    // },
+    removeFromCart(state,product) {
+      statusbar.cartItems =- state.cartItems.filter(item => item.id !== product
+        )
     },
     //register
     async register(context, payload) {

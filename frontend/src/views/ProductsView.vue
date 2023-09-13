@@ -49,6 +49,7 @@ export default {
         const category = product.Category.toLowerCase();
         return (
           productName.includes(searchQuery) || category.includes(searchQuery)
+     
         );
       });
     },
@@ -62,6 +63,7 @@ export default {
         return this.filterProducts();
       } else {
         return this.products;
+        
       }
     },
   },

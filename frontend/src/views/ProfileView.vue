@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h1 class="text-center p-3 heading-text">My Account</h1>
+      <h1 class="text-center p-3 heading-text text-white">My Account</h1>
       <div class="card mx-auto my-3 p-5 w-75 user-card">
         <div class="m-3 text-center">
           <img :src="$store.state.user?.userProfile" :alt="$store.state.user?.firstName" class="img-fluid mb-5"
@@ -42,6 +42,8 @@ export default{
   }
 }
 </script>
+
+
 <style scoped>
 .img-fluid.mb-5 {
   width: 200px ;

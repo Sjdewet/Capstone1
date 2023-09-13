@@ -35,6 +35,9 @@
                         <router-link class="head" to="/profile">View Profile</router-link>
                       </li>
                       <li>
+                        <router-link class="head" to="/cart">Cart</router-link>
+                      </li>
+                      <li>
                         <router-link class="head" to="/contact">Contact Us</router-link>
                       </li>
                       <li>
@@ -83,7 +86,7 @@ export default {
 
 .head{
     color: #C6A443;
-    margin-left: 4rem;
+    margin-left: 2.5rem;
     text-decoration: none;
      
 }
