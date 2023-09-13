@@ -51,8 +51,8 @@
 </template>
 
 <script>
-  import {useCookies} from 'vue3-cookies'
-  const {cookies}= useCookies()
+  // import {useCookies} from 'vue3-cookies'
+  // const {cookies}= useCookies()
 export default {
   computed:{
     user(){
@@ -63,6 +63,9 @@ export default {
     },
     isAdmin(){
       return this.result?.userRole?.toLowerCase() === 'admin'
+    },
+    isUser(){
+      return this.result?.userRole?.toLowerCase() === 'user'
     }
   },
   methods:{
