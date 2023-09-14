@@ -13,25 +13,25 @@
             <h5>Company</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="about" class="nav-link p-0 text-white">About</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Careers</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Our Culture</a></li>
+              <li class="nav-item mb-2"><a href="register" class="nav-link p-0 text-white">Register</a></li>
+              <li class="nav-item mb-2"><a href="login" class="nav-link p-0 text-white">Login</a></li>
 
             </ul>
           </div>
           <div class="col mb-3">
-            <h5>MANN</h5>
+            <h5>Details</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="Profile" class="nav-link p-0 text-white">View Profile</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Our MANN Server</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Phone: 081 321 2836</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Email: summerdewet@gmail.com</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Work Email: MANN@gmail.com</a></li>
             </ul>
           </div>
           <div class="col mb-3">
             <h5>Support</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Finding Help</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">About</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Get in Touch</a></li>
+              <li class="nav-item mb-2"><a href="https://www.facebook.com/" class="nav-link p-0 text-white">Facebook</a></li>
+              <li class="nav-item mb-2"><a href="https://www.instagram.com/" class="nav-link p-0 text-white">Instagram</a></li>
+              <li class="nav-item mb-2"><a href="contact" class="nav-link p-0 text-white">Get in Touch</a></li>
             </ul>
           </div>
         </footer>

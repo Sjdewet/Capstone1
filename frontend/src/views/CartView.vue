@@ -19,6 +19,10 @@
         <p>{{ item.prodName }}</p>
       </div> -->
       <p class="cart-total">Total: R{{ number }}</p>
+     <li>
+      <router-link class="checkout" to="/checkout">Checkout</router-link>
+    </li>
+    
     </div>
   </template>
   <script>
@@ -30,18 +34,7 @@
                     ]
         return cart
       },
-    //   cartTotal() {
-    //     return this.$store.getters['cartTotal'];
-    //   },
-
-    // number(){
-    //     const cart = JSON.parse(localStorage.getItem('cart'))
-    //     const totalCart = cart[0].key.amount
-    //     const cartQuantity = cart[0].key.quantity
-    //     const number = totalCart * cartQuantity
-    //     console.log(cartQuantity);
-    //     return number
-    // }
+ 
 
     number() {
         const cart = JSON.parse(localStorage.getItem('cart'))
@@ -98,4 +91,11 @@
     font-weight: bold;
     font-size: 1.2rem;
   }
+.checkout{
+  background-color: #C6A443;
+  width: 9rem;
+  height: 5rem;
+  color: black;
+  text-decoration: none;
+}
   </style>

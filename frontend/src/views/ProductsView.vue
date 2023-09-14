@@ -9,8 +9,6 @@
         <filterTest />
         
       </div>
- 
-
 
       <div class="row g-5">
         <div class="col" v-for="product in filteredProducts" :key="product.prodID">
