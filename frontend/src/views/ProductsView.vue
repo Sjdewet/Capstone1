@@ -1,9 +1,16 @@
 <template>
   <div>
     <div class="container mt-5">
-      <form class="d-flex" role="search" @submit.prevent="filterProducts">
+      <div class="d-flex" role="search" @submit.prevent="filterProducts">
         <input class="form-control me-2" type="search" placeholder="Search Product" aria-label="Search" v-model="searchInput">
-      </form>
+      </div>
+
+      <div class="media-fix-3">
+        <filterTest />
+        
+      </div>
+ 
+
 
       <div class="row g-5">
         <div class="col" v-for="product in filteredProducts" :key="product.prodID">
@@ -16,6 +23,7 @@
                 <p class="text-title">{{ product.prodName }}</p>
                 <p>{{ product.Category }}</p>
               </div>
+
               <div class="card-footer">
                 <button class="btn btn-outline-light" style="background-color:black">View More</button>
                 <div class="card-button">
@@ -35,11 +43,18 @@
 </template>
 
 <script>
+import filterTest from '../components/filterTest.vue';
 export default {
+  components: {
+    filterTest
+  },
   data() {
     return {
       searchInput: "",
+      // selectedCategory: "",
+      // sortType: "name"
     };
+
   },
   methods: {
     filterProducts() {
@@ -47,26 +62,42 @@ export default {
       return this.$store.state.products.filter((product) => {
         const productName = product.prodName.toLowerCase();
         const category = product.Category.toLowerCase();
-        return (
-          productName.includes(searchQuery) || category.includes(searchQuery)
-     
-        );
+        return productName.includes(searchQuery) || category.includes(searchQuery);
       });
     },
   },
   computed: {
     products() {
-      return this.$store.state.products;
+      return this.$store.state.products || []; // Handle case where products is null or undefined
     },
     filteredProducts() {
-      if (this.searchInput) {
-        return this.filterProducts();
-      } else {
-        return this.products;
-        
+      let filtered = this.products
+      filtered = JSON.parse(JSON.stringify(filtered))
+      console.log(filtered)
+      const searchQuery = this.searchInput.toLowerCase().trim()
+      if(searchQuery){
+        filtered = filtered.filter((product)=> product.prodName.toLowerCase().includes(searchQuery) || product.Category.toLowerCase().includes(searchQuery))
+      } else if(this.selectedCategory){
+        filtered = filtered.filter((product)=> product.Category.toLowerCase() === this.selectedCategory.toLowerCase())
       }
+      return [...filtered]
     },
+    // uniqueCategories() {
+    //   const products = this.products || []; // Handle case where products is null or undefined
+    //   return [...new Set(products.map((product) => product.Category))];
+    // },
+    // sortedProducts(){
+    //   const filtered = this.filterProducts
+    //   console.log(filtered)
+    //   if(this.sortType === "name"){
+    //     return filtered.sort((a, b) => a.prodName.localeCompare(b.prodName))
+    //   } else if(this.sortType === 'price'){
+    //     return filtered.sort((a, b) => a.amount - b.amount)
+    //   }
+    //   return filtered
+    // }
   },
+
   mounted() {
     this.$store.dispatch("fetchProducts");
   },

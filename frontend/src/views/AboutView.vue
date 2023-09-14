@@ -1,6 +1,6 @@
 <template>
 <div>
-  <img src="https://i.postimg.cc/g0JYWVcK/looking.jpg" class="img" alt="">
+  <img src="https://i.postimg.cc/g0JYWVcK/looking.jpg" class="img22" alt="">
 
 
   <div class="" style="width:100%">
@@ -26,7 +26,7 @@
         </div>
       </div>
      </div>
-     
+    
 </div>
 </template>
 
@@ -45,11 +45,9 @@
 .under{
   color: #C6A443;
 }
-.img{
+.img22{
   width: 100%;
-  height: 30%;
-
-  
+  height: 20%;
 }
 .container1{
   color: #C6A443;
@@ -73,4 +71,6 @@
   transform: translate(-50%, -50%);
   color: #C6A443;
 }
+
+
 </style>

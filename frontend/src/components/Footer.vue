@@ -12,7 +12,7 @@
           <div class="col mb-3">
             <h5>Company</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">About</a></li>
+              <li class="nav-item mb-2"><a href="about" class="nav-link p-0 text-white">About</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Careers</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Our Culture</a></li>
 
@@ -21,7 +21,7 @@
           <div class="col mb-3">
             <h5>MANN</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">View Profile</a></li>
+              <li class="nav-item mb-2"><a href="Profile" class="nav-link p-0 text-white">View Profile</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Our MANN Server</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">FAQs</a></li>
             </ul>

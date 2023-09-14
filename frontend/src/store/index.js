@@ -57,13 +57,12 @@ export default createStore({
     removeFromCart(state, prodID) {
       state.cartItems = state.cartItems.filter(item => item.id !== prodID);
     },
-    // addToCart(state, prodID) {
-    //   const thisProd = state.products.find((prod)=> prod.prodID === prodID)
-    //   const arr = state.cartItems
-    //   console.log(arr)
-    //   arr.push(thisProd);
-    // },
-
+    sortName(state) {
+      state.products.sort((a, b) => a.prodName.localeCompare(b.prodName))
+    },
+    sortPrice(state) {
+      state.products.sort((a, b) => a.amount - b.amount)
+    }
   },
   actions: {
     async fetchUsers(context) {
@@ -206,6 +205,26 @@ export default createStore({
         console.log(res.data);
       }catch(e) {
         console.log("err");
+      }
+    },
+    async FilterName(context) {
+      try {
+        console.log("you");
+        const { data } = await axios.get(`${url}products`)
+        context.commit("sortName", data.res)
+        console.log(data.res);
+      }catch(e) {
+        context.commit("setMsg", "an error has occured!")
+      }
+    },
+    async FilterPrice(context) {
+      try {
+        console.log("main button");
+        const { data } = await axios.get(`${url}products`)
+        context.commit("sortPrice", data.res)
+        console.log(data.res);
+      }catch(e) {
+        context.commit("setMsg", "an error has occured!")
       }
     }
   },
