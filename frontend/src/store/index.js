@@ -209,6 +209,16 @@ export default createStore({
         console.log("err");
       }
     },
+// users edit
+    async EditUsers(context, editU) {
+      try {
+        const res = await axios.patch(`${url}user/${editU.userID}`, editU)
+        context.commit("setUsers", res.data)
+        console.log(res.data);
+      }catch(e) {
+        console.log("err");
+      }
+    },
     async FilterName(context) {
       try {
         console.log("you");

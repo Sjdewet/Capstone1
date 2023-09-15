@@ -79,6 +79,13 @@ const routes = [
     props: true
     
   },
+  {
+    path: '/editu/:id',
+    name: 'editu',
+    component: () => import("../views/EditUserView.vue"),
+    props: true
+    
+  },
 
   {
     path: '/product/:prodID',

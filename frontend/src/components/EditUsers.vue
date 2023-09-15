@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
         <div class="edit-Div">
             <h1 class="h1">Edit</h1>
@@ -52,4 +52,4 @@ export default {
 .btn{
      color: #C6A443;
 }
-</style>
+</style> -->

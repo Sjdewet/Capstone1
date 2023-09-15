@@ -80,20 +80,7 @@ export default {
       }
       return [...filtered]
     },
-    // uniqueCategories() {
-    //   const products = this.products || []; // Handle case where products is null or undefined
-    //   return [...new Set(products.map((product) => product.Category))];
-    // },
-    // sortedProducts(){
-    //   const filtered = this.filterProducts
-    //   console.log(filtered)
-    //   if(this.sortType === "name"){
-    //     return filtered.sort((a, b) => a.prodName.localeCompare(b.prodName))
-    //   } else if(this.sortType === 'price'){
-    //     return filtered.sort((a, b) => a.amount - b.amount)
-    //   }
-    //   return filtered
-    // }
+ 
   },
 
   mounted() {

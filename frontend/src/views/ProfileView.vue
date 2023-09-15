@@ -55,8 +55,8 @@ export default{
       deleteUser(userID) {
           this.$store.dispatch('UserDeleted', userID)
           this.$store.dispatch('LogOut')
-          this.$router.push('/Login')
-          // router.push({name:'Login'})
+          // router.push('/Login')
+          router.push({name:'home'})
       },
      
   },

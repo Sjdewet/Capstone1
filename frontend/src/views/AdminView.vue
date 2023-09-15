@@ -44,7 +44,7 @@
           <table class="table-black w-100" style="background-color:black">
             <thead style="background-color:black">
               <tr style="background-color:black">
-                <th scope="col" style="color:rgb(0, 0, 0)">ID</th>
+                <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Surname</th>
                 <th scope="col">Age</th>
@@ -72,7 +72,9 @@
                     style="width: 5rem"
                   />
                 </td>
-                <td></td>
+              <td>
+                <router-link class="edit" :to="{ name: 'editu', params: { id: user.userID } }">Edit</router-link>
+              </td>
                 <td><button class="btn" type="button" @click="deleteUser(user.userID)">Delete</button></td>
               </tr>
             </tbody>
@@ -110,8 +112,9 @@
 
       deleteUser(userID) {
           this.$store.dispatch('UserDeleted', userID)
-      }
+      },
      }
+
   };
   </script>
 

@@ -35,7 +35,7 @@
                         <router-link class="head" to="/cart">Cart</router-link>
                       </li>
                       <li>
-                        <router-link class="head" to="/profile">View Profile</router-link>
+                        <router-link class="head" v-if="isLoggedIn" to="/profile">View Profile</router-link>
                       </li>
                       <li>
                         <router-link class="head" to="/contact">Contact Us</router-link>
@@ -51,8 +51,9 @@
 </template>
 
 <script>
-  // import {useCookies} from 'vue3-cookies'
-  // const {cookies}= useCookies()
+  import router from '@/router'
+import {useCookies} from 'vue3-cookies'
+  const {cookies}= useCookies()
 export default {
   computed:{
     user(){
@@ -66,11 +67,18 @@ export default {
     },
     isUser(){
       return this.result?.userRole?.toLowerCase() === 'user'
+    },
+    isLoggedIn(){
+      const loggedIn = cookies.get('MannUser')
+
+      return loggedIn
     }
   },
   methods:{
     logOut(){
       this.$store.dispatch('LogOut')
+      location.reload()
+      router.push({name: 'home'})
     }
   }
 }
