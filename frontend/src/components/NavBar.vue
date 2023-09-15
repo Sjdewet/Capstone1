@@ -32,10 +32,10 @@
                         <router-link class="head" to="/checkout">Checkout</router-link>
                       </li>
                       <li>
-                        <router-link class="head" to="/profile">View Profile</router-link>
+                        <router-link class="head" to="/cart">Cart</router-link>
                       </li>
                       <li>
-                        <router-link class="head" to="/cart">Cart</router-link>
+                        <router-link class="head" to="/profile">View Profile</router-link>
                       </li>
                       <li>
                         <router-link class="head" to="/contact">Contact Us</router-link>

@@ -94,7 +94,8 @@ export default createStore({
     async UserDeleted(context, userID) {
       try{
         const res = await axios.delete(`${url}user/${userID}`)
-        context.commit("setAdd", res.data)
+        const { err, msg } = res.data
+        context.commit("setAdd", msg)
         console.log("worked");
         location.reload()
       } catch(e) {
@@ -196,6 +197,7 @@ export default createStore({
     LogOut(context){
       context.commit('setUser')
       cookies.remove("MannUser");
+      localStorage.removeItem("user")
 
     },
     async SaveEdit(context, editP) {
