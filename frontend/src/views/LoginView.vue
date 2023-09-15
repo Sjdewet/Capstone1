@@ -3,7 +3,7 @@
     <h3 class="h3">ACCOUNT LOGIN</h3>
     <div style="display: flex; justify-content:center">
       <div class="row">
-       <form action="action_page.php" method="post" @submit.prevent="login">
+       <form action="action_page.php" method="post" @submit.prevent="login" class="form">
         <div class="container">
         <label for="uname"><b>Email Address</b></label>
        <input type="text" placeholder="Enter Email" v-model="payload.emailAdd" name="uname" required>
@@ -92,5 +92,13 @@ button:hover {
   width: 100%;
 }
 
+@media only screen and (max-width: 768px) {
+  .form{
+    width: 100%;
+  }
+  .row{
+    width: 90%;
+  }
+}
 
 </style>

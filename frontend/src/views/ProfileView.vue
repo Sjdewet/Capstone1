@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="color: white;">
+    <div style="color: white;" class="card-container">
       <h1 class="text-center p-3 heading-text text-white">My Account</h1>
       <div class="card mx-auto my-3 p-5 user-card">
         <div class="m-3 text-center">
@@ -77,5 +77,18 @@ width: 33rem;
 
 .card{
   height: 5%;
+}
+
+@media only screen and (max-width: 300px) {
+  .card{
+    width: 80%;
+    margin: auto;
+  }
+  .info-card{
+    width: 100%;
+  }
+  .card-container{
+    margin: auto !important;
+  }
 }
 </style>

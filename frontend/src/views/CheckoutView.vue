@@ -202,6 +202,20 @@ span {
 #exit {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 300px) {
+    .container{
+    width: 80% !important;
+    text-align: center !important;
+    margin: auto;
+    }
+    .exp-cvc{
+        margin: auto !important;
+        justify-content: center !important;
+    }
+
+    }
+
 </style>
 
 

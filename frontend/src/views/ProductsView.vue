@@ -35,6 +35,7 @@
             </router-link>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -42,9 +43,12 @@
 
 <script>
 import filterTest from '../components/filterTest.vue';
+
+import Spinner from '../components/SpinnerComp.vue'
 export default {
   components: {
-    filterTest
+    filterTest,
+
   },
   data() {
     return {
